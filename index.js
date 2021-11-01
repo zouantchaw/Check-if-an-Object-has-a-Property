@@ -24,16 +24,9 @@ let users = {
 };
 
 function isEveryoneHere(userObj) {
-  let roleCall = [userObj.hasOwnProperty('Alan'), userObj.hasOwnProperty('Jeff'), userObj.hasOwnProperty('Sarah'), userObj.hasOwnProperty('Ryan')]
-  let status = true;
-  console.log(roleCall)
-  roleCall.forEach(x => {
-    if (x === false) {
-      status = false
-    }
-  })
-  return status
-
+  return ["Alan", "Jeff", "Sarah", "Ryan"].every(name =>
+    userObj.hasOwnProperty(name)
+  );
 }
 
 console.log(isEveryoneHere(users));
